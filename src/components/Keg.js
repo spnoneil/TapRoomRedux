@@ -7,7 +7,7 @@ function Keg(props){
     <div>
       <h3><strong>{props.names}</strong></h3>
       <h4>${props.price} / pint</h4>
-      <h4>{props.pintsLeft}</h4>
+      <h4>PINTS LEFT: {props.pintsLeft}</h4>
       <button onClick= {() => props.whenKegDetailButtonClicked(props.id)}>See more details!</button>
     </div>
     </>
