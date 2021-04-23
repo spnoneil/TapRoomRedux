@@ -25,7 +25,7 @@ function NewKegForm(props){
   )
 }
 
-newKegForm.propTypes = {
+NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func
 }
 

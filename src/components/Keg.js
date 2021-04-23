@@ -24,3 +24,5 @@ Keg.propTypes = {
   whenKegDetailButtonClicked: PropTypes.func,
   whenPintSaleButtonClicked: PropTypes.func
 }
+
+export default Keg;
