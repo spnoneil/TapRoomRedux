@@ -8,24 +8,27 @@ function ReusableForm(props) {
         <input
           type="text"
           name="names"
-          placeholder="Name of beverage" />
+          placeholder="Name of beverage"
+          required />
         <input
           type="text"
           name="brewer"
-          placeholder="Name of Brewer" />
+          placeholder="Name of Brewer"
+          required />
         <input
           type="number"
           name="price"
-          placeholder="Price per pint" />
+          placeholder="Price per pint"
+          required />
         <input
           type="number"
-          name="ABV"
+          name="abv"
           placeholder="ABV in %"
           min={0}
           max={100} />
         <input
           type="number"
-          name="IBU"
+          name="ibu"
           placeholder="IBU"
           min={0} />
           <button type="submit">{props.buttonText}</button>
