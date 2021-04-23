@@ -4,7 +4,7 @@ function Header(){
   return (
     <>
     <Jumbotron>
-      <h1>Papa McDonald's Ultra Fab Tap Room</h1>
+      <h1>Dr. Bob's Ultra Fab Tap Room</h1>
     </Jumbotron>
     </>
   );
