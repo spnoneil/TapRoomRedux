@@ -11,6 +11,7 @@ class KegControl extends React.Component {
       formVisibleOnPage: false,
       mainKegList: [],
       selectedKeg: null,
+      startingPintsLeft: 124
     };
   }
 
@@ -42,6 +43,19 @@ class KegControl extends React.Component {
     });
   }
 
+  // handleDecrementingSoldPint = (id) => {
+  //   const selectedKeg = this.state..mainKegList.filter(keg => keg.id === id)[0];
+  //   this.setState({
+
+  //   });
+  // }
+  // handlePintSaleClick = (id) => {
+  //   const pintDecrement = this.state.mainKegList.filter(keg => keg.id === id)[0];
+  //   this.setState(prevState => {
+  //     return {startingPintsLeft}
+  //   })
+  // }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -49,6 +63,7 @@ class KegControl extends React.Component {
     if (this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail
       keg = {this.state.selectedKeg}
+      // whenPintSaleButtonClicked = {this.handlePintSaleClick}
       // TODO: DELETE HANDLING
       // TODO: EDIT HANDLING
       />
