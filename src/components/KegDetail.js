@@ -15,12 +15,20 @@ function KegDetail(props){
     <p>IBU: {keg.ibu}</p>
     <p>PINTS REMAINING: {keg.pintsLeft}</p>
     {/* <button onClick={() => whenPintSaleButtonClicked(keg.id)}>Sold a pint? CLICK HERE</button> */}
-    <button onClick={() => {return keg.pintsLeft--}}>Sold a pint? CLICK HERE</button>
+    <button onClick={() => {decrementPint(keg)}}>Sold a pint? CLICK HERE</button>
     {/* TODO: EDIT */}
     {/* TODO: DELETE */}
     <hr/>
     </>
   );
+}
+
+const decrementPint = (keg) => {
+  if (keg.pintsLeft > 0) {
+    return keg.pintsLeft--;
+  } else {
+    keg.pintsLeft = "SOLD OUT"
+  }
 }
 
 KegDetail.propTypes = {
