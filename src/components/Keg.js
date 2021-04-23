@@ -7,7 +7,8 @@ function Keg(props){
     <div>
       <h3><strong>{props.names}</strong></h3>
       <h4>{props.price}</h4>
-      <button onClick= {() => props.whenKegButtonClicked(props.id)}>See more details!</button>
+      <button onClick= {() => props.whenKegDetailButtonClicked(props.id)}>See more details!</button>
+      <button onClick={() => props.whenPintSaleButtonClicked(props.pintsLeft)}>Sold a pint? CLICK HERE</button>
     </div>
     </>
   );
@@ -19,5 +20,7 @@ Keg.propTypes = {
   price: PropTypes.number,
   abv: PropTypes.number,
   ibu: PropTypes.number,
-  whenKegButtonClicked: PropTypes.func
+  pintsLeft: PropTypes.number,
+  whenKegDetailButtonClicked: PropTypes.func,
+  whenPintSaleButtonClicked: PropTypes.func
 }
