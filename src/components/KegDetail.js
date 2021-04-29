@@ -3,7 +3,16 @@ import PropTypes from "prop-types";
 
 function KegDetail(props){
 
-  const { keg } = props;
+  const { keg, onPintSaleButtonClicked } = props;
+
+  let pour;
+  let pintsLeft;
+  if (keg.pintsLeft !== 0) {
+    pintsLeft = <p>PINTS REMAINING: {keg.pintsLeft}</p>
+    pour = <button onClick={ () => onPintSaleButtonClicked() }>Sold a pint? CLICK HERE</button>
+  } else {
+    pour = <p>KEG IS TAPPED!</p>
+  }
 
   return (
     <>
@@ -13,27 +22,20 @@ function KegDetail(props){
     <p>PRICE PER PINT: ${keg.price}</p>
     <p>ABV: {keg.abv}%</p>
     <p>IBU: {keg.ibu}</p>
-    <p>PINTS REMAINING: {keg.pintsLeft}</p>
-    {/* <button onClick={() => whenPintSaleButtonClicked(keg.id)}>Sold a pint? CLICK HERE</button> */}
-    <button onClick={() => {decrementPint(keg)}}>Sold a pint? CLICK HERE</button>
-    {/* TODO: EDIT */}
-    {/* TODO: DELETE */}
+    <div>
+      { pour }
+    </div>
+    <div>
+      { pintsLeft }
+    </div>
     <hr/>
     </>
   );
 }
 
-const decrementPint = (keg) => {
-  if (keg.pintsLeft > 0) {
-    return keg.pintsLeft--;
-  } else {
-    keg.pintsLeft = "SOLD OUT"
-  }
-}
-
 KegDetail.propTypes = {
   keg: PropTypes.object,
-  whenPintSaleButtonClicked: PropTypes.func
+  onPintSaleButtonClicked: PropTypes.func
 }
 
 export default KegDetail;
