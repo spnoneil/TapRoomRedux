@@ -15,14 +15,14 @@ function Keg(props){
 }
 
 Keg.propTypes = {
-  names: PropTypes.string,
-  brewer: PropTypes.string,
-  price: PropTypes.number,
-  abv: PropTypes.number,
-  ibu: PropTypes.number,
+  names: PropTypes.string.isRequired,
+  brewer: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  abv: PropTypes.number.isRequired,
+  ibu: PropTypes.number.isRequired,
   pintsLeft: PropTypes.number,
+  id: PropTypes.string,
   whenKegDetailButtonClicked: PropTypes.func,
-  whenPintSaleButtonClicked: PropTypes.func
 }
 
 export default Keg;
