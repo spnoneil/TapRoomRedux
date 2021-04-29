@@ -19,7 +19,7 @@ _A simple REACT SPA, created for an Epicodus Coding School code review to practi
 * _Still in the terminal, enter `npm run start` to compile and run the project_
 
 ## Component Tree
-![draw.io Component Tree](README-files\TapRoom.png)
+![draw.io Component Tree](https://i.gyazo.com/f4eafaf1e07ca16c2cdff4d1ff7ef833.png)
 
 ## Technologies Used
 
