@@ -17,5 +17,8 @@ describe("rootReducer", () => {
   test('Check that initial state of kegListReducer matches root', () => {
     expect(store.getState().mainKegList).toEqual(kegListReducer(undefined, { type: null }));
   });
+  test('Check that initial state of formVisibleReducer matches root', () => {
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
+  });
 
 })
