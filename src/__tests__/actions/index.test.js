@@ -13,6 +13,7 @@ describe('keg shop actions', () => {
       price: 5,
       abv: 5,
       ibu: 3,
+      pintsLeft: 124,
       id: 1
     })).toEqual({
       type: "ADD_KEG",
@@ -21,7 +22,28 @@ describe('keg shop actions', () => {
       price: 5,
       abv: 5,
       ibu: 3,
+      pintsLeft: 124,
       id: 1
+    })
+  })
+  it('decrementPint should decrement pintsLeft by 1', () => {
+    expect(actions.decrementPint({
+      names: "Buddles",
+      brewer: "Bathroom Sink",
+      price: 4,
+      abv: 3,
+      ibu: 3,
+      pintsLeft: 124,
+      id: 3
+    })).toEqual({
+      type: "ADD_KEG",
+      names: "Buddles",
+      brewer: "Bathroom Sink",
+      price: 4,
+      abv: 3,
+      ibu: 3,
+      pintsLeft: 123,
+      id: 3
     })
   })
 })
