@@ -29,25 +29,18 @@ class KegControl extends React.Component {
   }
 
   handleChangingSelectedKeg = (id) => {
-    const selectedKeg = this.props.mainKegList.filter(keg => keg.id === id)[0];
+    const selectedKeg = this.props.mainKegList[id];
     const { dispatch } = this.props;
     const action = a.selectKeg(selectedKeg);
     dispatch(action);
   }
 
-  handleDecrementingSoldPint = () => {
-    const selectedKeg = this.props.selectedKeg;
-    const newPintsLeft = Object.assign({}, selectedKeg, { pintsLeft: parseInt(selectedKeg.pintsLeft) - 1 });
-    // selectedKeg.pintsLeft = newPintsLeft;
-    // const newMainKegList = this.props.mainKegList.filter(keg => keg.id !== this.props.selectedKeg.id).concat(newPintsLeft);
+  handleDecrementingSoldPint = (keg) => {
     const {dispatch } = this.props;
-    const action = a.addKeg(newPintsLeft);
+    const action = a.decrementPint(keg);
     dispatch(action);
-
-
-    this.setState({ 
-      // mainKegList: newMainKegList,
-      selectedKeg: newPintsLeft })
+    const action2 = a.unselectKeg();
+    dispatch(action2);
   }
 
   render(){
