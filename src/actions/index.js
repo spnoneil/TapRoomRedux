@@ -5,7 +5,7 @@ export const toggleForm = () => ({
 });
 
 export const selectKeg = (keg) => {
-  const { names, brewer, price, abv, ibu, id } = keg;
+  const { names, brewer, price, abv, ibu, pintsLeft, id } = keg;
   return {
     type: c.SELECT_KEG,
     names,
@@ -13,6 +13,7 @@ export const selectKeg = (keg) => {
     price,
     abv,
     ibu,
+    pintsLeft,
     id
   }
 }
@@ -30,6 +31,7 @@ export const addKeg = (keg) => {
     price: price,
     abv: abv,
     ibu: ibu,
+    pintsLeft: 124,
     id: id
   }
 }
