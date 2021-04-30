@@ -35,3 +35,17 @@ export const addKeg = (keg) => {
     id: id
   }
 }
+
+export const decrementPint = (keg) => {
+  const { names, brewer, price, abv, ibu, pintsLeft, id } = keg;
+  return {
+    type: c.ADD_KEG,
+    names,
+    brewer,
+    price,
+    abv,
+    ibu,
+    pintsLeft: pintsLeft - 1,
+    id
+  }
+}
