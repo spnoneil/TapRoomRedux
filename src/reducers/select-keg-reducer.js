@@ -12,7 +12,9 @@ export default (state = null, action) => {
         ibu,
         id
       }
-      default:
-        return state;
+    case c.UNSELECT_KEG:
+      return null;
+    default:
+      return state;
   }
 }

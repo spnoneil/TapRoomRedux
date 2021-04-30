@@ -36,5 +36,17 @@ describe("selectKegReducer", () => {
       id: 2
     }
     expect(selectKegReducer(null, action)).toEqual(keg2);
+  });
+  test('Should unselect currently selected keg', () => {
+    action = {
+      type: c.UNSELECT_KEG,
+      names: "Heineken",
+      brewer: "I forget",
+      price: 5,
+      abv: 8,
+      ibu: 10,
+      id: 1
+    }
+    expect(selectKegReducer(null, action)).toEqual(null);
   })
 })
