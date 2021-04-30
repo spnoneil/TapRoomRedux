@@ -1,6 +1,6 @@
 # <div align="center">**Dr. Bob's Ultra Fab Tap Room**</div>
 
-#### <div align="center">*A REACT project, just learnin' components and props and things*</div>
+#### <div align="center">*A REACT project, just learnin' components and props and things - NOW WITH REDUX*</div>
 
 #### <div align="center">**By &copy; [Scott O'Neil](https://github.com/spnoneil), 4/23/2021**</div>
 <br>
@@ -9,7 +9,7 @@
 
 
 ## Description
-_A simple REACT SPA, created for an Epicodus Coding School code review to practice/show knowledge of REACT components and properties_
+_A simple REACT SPA, created for an Epicodus Coding School code review to practice/show knowledge of REACT components and properties, then further coded to utilize REDUX_
 
 
 ## Setup/Installation Requirements
