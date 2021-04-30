@@ -9,7 +9,7 @@ function KegDetail(props){
   let pintsLeft;
   if (keg.pintsLeft !== 0) {
     pintsLeft = <p>PINTS REMAINING: {keg.pintsLeft}</p>
-    pour = <button onClick={ () => onPintSaleButtonClicked() }>Sold a pint? CLICK HERE</button>
+    pour = <button onClick={ () => onPintSaleButtonClicked(keg) }>Sold a pint? CLICK HERE</button>
   } else {
     pour = <p>KEG IS TAPPED!</p>
   }

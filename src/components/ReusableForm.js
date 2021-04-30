@@ -34,7 +34,8 @@ function ReusableForm(props) {
         <input
           type="number"
           name="pintsLeft"
-          placeholder="124" />
+          placeholder="Size in pints (124 standard)"
+          min={0} />
           <button type="submit">{props.buttonText}</button>
       </form>
     </>
