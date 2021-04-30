@@ -31,6 +31,10 @@ function ReusableForm(props) {
           name="ibu"
           placeholder="IBU"
           min={0} />
+        <input
+          type="number"
+          name="pintsLeft"
+          placeholder="124" />
           <button type="submit">{props.buttonText}</button>
       </form>
     </>

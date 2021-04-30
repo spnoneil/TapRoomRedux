@@ -13,7 +13,7 @@ function NewKegForm(props){
       price: parseInt(event.target.price.value),
       abv: parseInt(event.target.abv.value),
       ibu: parseInt(event.target.ibu.value),
-      pintsLeft: 124,
+      pintsLeft: parseInt(event.target.pintsLeft.value),
       id: v4()
     });
   }

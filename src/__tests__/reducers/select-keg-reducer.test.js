@@ -10,6 +10,7 @@ describe("selectKegReducer", () => {
     price: 5,
     abv: 8,
     ibu: 10,
+    pintsLeft: 124,
     id: 1
   }
   const keg2 = {
@@ -18,6 +19,7 @@ describe("selectKegReducer", () => {
     price: 3,
     abv: 2,
     ibu: 2,
+    pintsLeft: 124,
     id: 2
   }
 
@@ -33,6 +35,7 @@ describe("selectKegReducer", () => {
       price: 3,
       abv: 2,
       ibu: 2,
+      pintsLeft: 124,
       id: 2
     }
     expect(selectKegReducer(null, action)).toEqual(keg2);
@@ -45,6 +48,7 @@ describe("selectKegReducer", () => {
       price: 5,
       abv: 8,
       ibu: 10,
+      pintsLeft: 124,
       id: 1
     }
     expect(selectKegReducer(null, action)).toEqual(null);

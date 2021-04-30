@@ -23,7 +23,7 @@ export const unselectKeg = () => ({
 });
 
 export const addKeg = (keg) => {
-  const { names, brewer, price, abv, ibu, id } = keg;
+  const { names, brewer, price, abv, ibu, pintsLeft, id } = keg;
   return {
     type: c.ADD_KEG,
     names: names,
@@ -31,7 +31,7 @@ export const addKeg = (keg) => {
     price: price,
     abv: abv,
     ibu: ibu,
-    pintsLeft: 124,
+    pintsLeft: pintsLeft,
     id: id
   }
 }

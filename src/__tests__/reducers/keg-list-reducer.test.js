@@ -9,6 +9,7 @@ describe('kegListReducer', () => {
     price: 3,
     abv: 7,
     ibu: 10,
+    pintsLeft: 124,
     id: 1
   };
   
@@ -17,7 +18,7 @@ describe('kegListReducer', () => {
   });
 
   test('Should successfully add new keg data to mainKegList', () => {
-    const { names, brewer, price, abv, ibu, id } = newKegData;
+    const { names, brewer, price, abv, ibu, pintsLeft, id } = newKegData;
     action = {
       type: 'ADD_KEG',
       names: names,
@@ -25,6 +26,7 @@ describe('kegListReducer', () => {
       price: price,
       abv: abv,
       ibu: ibu,
+      pintsLeft: pintsLeft,
       id: id
     };
     expect(kegListReducer({}, action)).toEqual({
@@ -34,6 +36,7 @@ describe('kegListReducer', () => {
         price: price,
         abv: abv,
         ibu: ibu,
+        pintsLeft: pintsLeft,
         id: id
       }
     })

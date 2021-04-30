@@ -28,6 +28,7 @@ describe("rootReducer", () => {
       price: 5,
       abv: 3,
       ibu: 1,
+      pintsLeft: 124,
       id: 1
     }
     store.dispatch(action);
