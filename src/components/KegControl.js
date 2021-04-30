@@ -2,14 +2,17 @@ import React from "react";
 import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import * as a from './../actions';
 
 class KegControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
-      mainKegList: [],
+      // formVisibleOnPage: false,
+      // mainKegList: [],
       selectedKeg: null
     };
   }
@@ -17,22 +20,30 @@ class KegControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        formVisibleOnPage: false,
+        // formVisibleOnPage: false,
         selectedKeg: null
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage
+      // }));
     }
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newMainKegList = this.state.mainKegList.concat(newKeg);
-    this.setState({
-      mainKegList: newMainKegList,
-      formVisibleOnPage: false
-    });
+    const {dispatch} = this.props;
+    const action = a.addKeg(newKeg);
+    dispatch(action);
+    const action2 = a.toggleForm();
+    dispatch(action2);
+    // const newMainKegList = this.state.mainKegList.concat(newKeg);
+    // this.setState({
+    //   mainKegList: newMainKegList,
+    //   formVisibleOnPage: false
+    // });
   }
 
   handleChangingSelectedKeg = (id) => {
@@ -47,8 +58,9 @@ class KegControl extends React.Component {
     const newPintsLeft = Object.assign({}, selectedKeg, { pintsLeft: parseInt(selectedKeg.pintsLeft) - 1 });
     selectedKeg.pintsLeft = newPintsLeft
     const newMainKegList = this.state.mainKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(newPintsLeft);
+    
     this.setState({ 
-      mainKegList: newMainKegList,
+      // mainKegList: newMainKegList,
       selectedKeg: newPintsLeft })
   }
 
@@ -62,7 +74,7 @@ class KegControl extends React.Component {
       onPintSaleButtonClicked = {this.handleDecrementingSoldPint}
       />
       buttonText = "Return to Keg List"
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText = "Return to Keg List";
     } else {
@@ -79,5 +91,19 @@ class KegControl extends React.Component {
     )
   }
 }
+
+KegControl.propTypes = {
+  mainKegList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
+};
+
+const mapStateToProps = state => {
+  return {
+    mainKegList: state.mainKegList,
+    formVisibleOnPage: state.formVisibleOnPage
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 
 export default KegControl;
